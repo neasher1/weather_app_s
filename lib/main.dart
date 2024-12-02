@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'hourlyforecast.dart'; // Import the new file for hourly forecast
+import 'hourlyforecast.dart';
+import 'sevendayforecast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -189,6 +190,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               );
                             },
                             child: const Text('View Hourly Forecast'),
+                          ),
+                          const SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SevenDayForecast(),
+                                ),
+                              );
+                            },
+                            child: const Text('View 7-Day Forecast'),
                           ),
                         ],
                       )
